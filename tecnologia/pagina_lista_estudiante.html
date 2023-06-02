@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
+    </link>
+    <title>Servicio web</title>
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #d9d9d9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 10px;
+        }
+
+        header img {
+            max-height: 50px;
+        }
+
+        header h1,
+        header p {
+            margin: 0;
+        }
+
+        ul.dentro {
+            list-style-position: inside;
+        }
+
+        ul.fuera {
+            list-style-position: outside;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1>Rol Centro de Investigaciones</h1>
+            Lista de Estudiantes
+        </div>
+        <img src="LOGO_UMNG.png" alt="Logo" />
+    </header>
+    <p>Lista de Estudiantes</p>
+    <ul class="dentro">
+        <li>Estudiante 1</li>
+        <li>Estudiante 2</li>
+        <li>Estudiante 3</li>
+    </ul>
+
+
+
+    <script>
+        // Manejador de eventos para mostrar el nombre del archivo seleccionado y cambiar el estilo al enviar
+        const fileUploads = document.querySelectorAll(
+            '.file-upload input[type="file"]'
+        );
+        fileUploads.forEach((input) => {
+            input.addEventListener("change", (event) => {
+                const fileName = event.target.files[0].name;
+                const span = event.target.parentNode.querySelector("span");
+                span.textContent = fileName;
+                event.target.parentNode.classList.add("sent");
+            });
+        });
+    </script>
+</body>
+<script src="./js/files.js"></script>
+
+</html>
